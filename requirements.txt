@@ -1,8 +1,0 @@
-click==8.0.4
-importlib-metadata==4.11.2
-lxml==4.8.0
-pyerz==1.0.2
-python-docx==0.8.11
-scandir==1.10.0
-typing_extensions==4.1.1
-zipp==3.7.0
