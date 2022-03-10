@@ -6,8 +6,13 @@ from docx.shared import Cm
 import os
 import sys
 
-f=open(sys.argv[1],mode='r',encoding='utf-8')
-code=f.read()
+#f=open(sys.argv[1],mode='r',encoding='utf-8')
+#code=f.read()
+
+res=os.popen("head -n 1530 " + sys.argv[1])
+code=res.read()
+res=os.popen("tail -n 1530 " + sys.argv[1])
+code+=res.read()
 
 path = sys.argv[1][0:-4] + ".docx"
 os.system("touch %s" %path)
@@ -18,7 +23,8 @@ document.sections[0].top_margin = Cm(2.04)
 document.sections[0].bottom_margin = Cm(2.04)
 document.sections[0].left_margin = Cm(2.54)
 document.sections[0].right_margin = Cm(2.54)
-p = document.add_paragraph(code)
+p = document.paragraphs[0]
+p.text=code
 p.style.font.size=Pt(10.5)
 p.paragraph_format.line_spacing=Pt(14)
 document.save(path) 
