@@ -6,13 +6,15 @@ from docx.shared import Cm
 import os
 import sys
 
-#f=open(sys.argv[1],mode='r',encoding='utf-8')
-#code=f.read()
+f=open(sys.argv[1],mode='r',encoding='utf-8')
+code=f.read()
 
+"""
 res=os.popen("head -n 1530 " + sys.argv[1])
 code=res.read()
 res=os.popen("tail -n 1530 " + sys.argv[1])
 code+=res.read()
+"""
 
 path = sys.argv[1][0:-4] + ".docx"
 os.system("touch %s" %path)
