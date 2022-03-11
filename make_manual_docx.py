@@ -17,4 +17,6 @@ t1=document.add_heading(sys.argv[2], 1)
 t1.alignment=WD_ALIGN_PARAGRAPH.CENTER
 t2=document.add_heading('使用说明书', 1)
 t2.alignment=WD_ALIGN_PARAGRAPH.CENTER
+document.add_heading('访问系统', 2)
+document.add_heading('系统运行环境', 2)
 document.save(path) 
