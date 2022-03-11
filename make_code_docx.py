@@ -18,7 +18,7 @@ code+=res.read()
 
 path = sys.argv[1][0:-4] + ".docx"
 os.system("touch %s" %path)
-document = Document('examples.docx')
+document = Document('code-temp.docx')
 document.styles['Normal'].font.name = u'Times New Roman' #设置西文字体
 document.styles['Normal']._element.rPr.rFonts.set(qn('w:eastAsia'), u'宋体') #设置中文字体使用字体2->宋体
 document.sections[0].top_margin = Cm(2.04)

@@ -19,10 +19,13 @@ code_dir=(
     ../coincircle-backend/suxiangw/
     )
 out_dir=project
+version='V1.0'
 
 num=0
 for i in "${proj[@]}" ; do
     mkdir -p ${out_dir}/${i}V1.0
-    . make_code_doc.sh ${code_dir[${num}]} ${out_dir}/${i}V1.0/${i}V1.0源代码.txt
+    . make_code_doc.sh ${code_dir[${num}]} ${out_dir}/${i}${version}/${i}${version}源代码.txt
+    source venv/bin/activate
+    python make_manual_docx.py ${out_dir}/${i}${version}/ ${i}${version}
     let "num=num+1"
 done

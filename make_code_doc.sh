@@ -5,4 +5,4 @@ find ${code_dir} -type f '(' -name '*.html' -o -name '*.css' -o -name '*.js' -o 
     -exec cat {} \; | dos2unix | sed -f script > ${out_file}
 
 source venv/bin/activate
-python make_docx.py ${out_file}
+python make_code_docx.py ${out_file}
